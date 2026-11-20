@@ -20,3 +20,27 @@ button:disabled{opacity:.5;cursor:not-allowed}.honeypot{position:absolute;left:-
 .ticker-group{display:block;flex:none;white-space:nowrap}
 @keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-25%)}}
 @media(prefers-reduced-motion:reduce){.ticker .ticker-track{animation:none;will-change:auto}}
+
+/* Ambient lights and gentle movement for the public event page. */
+body:has(.hero){isolation:isolate}
+body:has(.hero)::before,body:has(.hero)::after{content:"";position:fixed;inset:-15%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 14% 24%,#ff23ae38 0,transparent 37%),radial-gradient(ellipse at 86% 66%,#25dfff30 0,transparent 36%);animation:ambient-drift 16s ease-in-out infinite alternate}
+body:has(.hero)::after{background:radial-gradient(ellipse at 85% 8%,#45dfff22,transparent 35%),radial-gradient(ellipse at 10% 85%,#ed27ba20,transparent 36%);animation-delay:-8s;animation-duration:21s}
+.hero h1{animation:bootcamp-glow 4s ease-in-out infinite}
+.hero h1 span{animation:none;text-shadow:none}
+.hero-copy{animation:soft-arrival .8s ease-out both}
+.hero-poster{animation:poster-halo 6s ease-in-out infinite}
+body:has(.hero) .button,body:has(.hero) nav .pill,body:has(.hero) .pass button{position:relative;overflow:hidden;transition:transform .2s ease,filter .2s ease;animation:booking-glow 3.8s ease-in-out infinite}
+body:has(.hero) .button::after,body:has(.hero) nav .pill::after{content:"";position:absolute;inset:-40% auto -40% -65%;width:40%;background:linear-gradient(90deg,transparent,#ffffff38,transparent);transform:skewX(-20deg);pointer-events:none;animation:button-shine 6s ease-in-out infinite}
+body:has(.hero) .button:hover,body:has(.hero) nav .pill:hover,body:has(.hero) .pass button:hover{transform:translateY(-2px)}
+body:has(.hero) button:disabled{animation:none}
+.section-head h2 em{ text-shadow:0 0 24px #ff36aa38}
+.imolatino-teaser>a{animation:imolatino-pulse 2.8s ease-in-out infinite;transform-origin:center}
+@keyframes ambient-drift{from{transform:translate3d(-2%,-2%,0) scale(1);opacity:.7}to{transform:translate3d(3%,4%,0) scale(1.06);opacity:1}}
+@keyframes bootcamp-glow{0%,100%{text-shadow:0 0 20px #ff36aa55,0 0 45px #ff36aa22}50%{text-shadow:0 0 26px #ff36aa99,0 0 65px #3de5ff55}}
+@keyframes poster-halo{0%,100%{box-shadow:0 0 35px #ed21a22a,14px 14px 0 #32c9e308}50%{box-shadow:0 0 55px #e425a544,0 0 28px #32d9ed33}}
+@keyframes booking-glow{0%,100%{box-shadow:0 0 12px #ff36aa22}50%{box-shadow:0 0 25px #ff36aa55,0 0 10px #4de6ff24}}
+@keyframes button-shine{0%,60%{left:-65%}90%,100%{left:130%}}
+@keyframes imolatino-pulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 8px #ff36aa44)}50%{transform:scale(1.045);filter:drop-shadow(0 0 22px #ff36aa99) drop-shadow(0 0 12px #4de6ff66)}}
+@keyframes soft-arrival{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){body:has(.hero)::before,body:has(.hero)::after{inset:-8%}.imolatino-teaser>a{width:min(560px,92%)}}
+@media(prefers-reduced-motion:reduce){body:has(.hero)::before,body:has(.hero)::after,.hero h1,.hero-poster,.hero-copy,body:has(.hero) .button,body:has(.hero) nav .pill,body:has(.hero) .pass button,.imolatino-teaser>a,body:has(.hero) .button::after,body:has(.hero) nav .pill::after{animation:none!important}}
