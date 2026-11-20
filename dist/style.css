@@ -12,3 +12,11 @@ button:disabled{opacity:.5;cursor:not-allowed}.honeypot{position:absolute;left:-
 .latinfun{display:flex;align-items:center;justify-content:center;gap:32px;border-top:1px solid var(--line)}.latinfun-logo{flex:none;display:block;border-radius:24px}.latinfun-logo img{display:block;width:128px;height:128px;border-radius:24px}.latinfun h2{font-size:36px;margin:8px 0}.latinfun p{margin:10px 0 18px}.latinfun-stores{display:flex;gap:12px;flex-wrap:wrap}.latinfun-stores a{font-size:16px;padding:10px 16px;border:1px solid var(--line);border-radius:6px;text-decoration:none}.latinfun a:focus-visible{outline:3px solid var(--cyan);outline-offset:5px}@media(max-width:600px){.latinfun{flex-direction:column;text-align:center;gap:18px}.latinfun-stores{justify-content:center}.latinfun h2{font-size:30px}}
 
 .imolatino-teaser{text-align:center;border-top:1px solid var(--line);background:radial-gradient(ellipse at center,#90115a22,transparent 70%)}.imolatino-teaser>a{display:block;width:min(560px,100%);margin:24px auto 16px;border-radius:8px}.imolatino-teaser img{display:block;width:100%;height:auto}.imolatino-teaser p{font-size:16px;color:var(--muted);margin:0}.imolatino-teaser>a:focus-visible{outline:3px solid var(--cyan);outline-offset:8px}
+
+/* Diagonal continuous ribbon; repeated groups keep the loop seamless. */
+.ticker-wrap{overflow:hidden;padding:42px 0;margin:0 0 8px}
+.ticker-wrap .ticker{transform:rotate(-2deg);width:calc(100% + 32px);margin-left:-16px;box-shadow:0 0 30px #ff36aa22}
+.ticker .ticker-track{display:flex;width:max-content;padding:0;text-align:left;animation:ticker-scroll 32s linear infinite;will-change:transform}
+.ticker-group{display:block;flex:none;white-space:nowrap}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-25%)}}
+@media(prefers-reduced-motion:reduce){.ticker .ticker-track{animation:none;will-change:auto}}
