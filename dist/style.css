@@ -44,3 +44,60 @@ body:has(.hero) button:disabled{animation:none}
 @keyframes soft-arrival{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:700px){body:has(.hero)::before,body:has(.hero)::after{inset:-8%}.imolatino-teaser>a{width:min(560px,92%)}}
 @media(prefers-reduced-motion:reduce){body:has(.hero)::before,body:has(.hero)::after,.hero h1,.hero-poster,.hero-copy,body:has(.hero) .button,body:has(.hero) nav .pill,body:has(.hero) .pass button,.imolatino-teaser>a,body:has(.hero) .button::after,body:has(.hero) nav .pill::after{animation:none!important}}
+
+/* Compact public-page rhythm and bottom-aligned card actions. */
+main>.section{padding-top:48px;padding-bottom:48px}
+main .section-head{gap:24px;margin-bottom:24px}
+main .section-head p{margin-bottom:0}
+main h2{margin-top:12px}
+.hero{gap:40px;padding-top:36px;padding-bottom:44px}
+.hero-kicker{margin-top:20px}
+.hero-chips{margin:18px 0}
+.actions{margin:22px 0}
+.hero-prices{margin-top:24px;padding-top:18px}
+.ticker-wrap{padding:28px 0;margin-bottom:0}
+#schedule{gap:20px}
+.schedule-card{display:flex;flex-direction:column;min-width:0}
+.schedule-card>.poster-open{flex:none}
+.card-info{display:flex;flex:1;flex-direction:column;padding:20px}
+.card-info p{min-height:0;margin:0 0 14px}
+.card-info .show-note{margin-top:2px}
+.card-book{align-self:flex-start;margin-top:auto;padding-top:10px}
+.passes{gap:20px}
+.pass{display:flex;flex-direction:column;padding:26px}
+.pass-name{min-height:2.8em;line-height:1.4}
+.pass h3{margin:16px 0}
+.pass p{min-height:0;margin:0 0 16px}
+.pass ul{margin:0 0 20px;padding-top:16px}
+.pass button{margin-top:auto}
+.booking{gap:40px}
+.booking>div>p{margin-bottom:18px}
+.note{margin-top:20px}
+#form label{margin-bottom:16px}
+#form legend{margin-bottom:12px}
+#form .total{padding:18px 0}
+#result:empty{display:none}
+.venue p{margin-bottom:12px}
+.latinfun p{margin:8px 0 14px}
+.imolatino-teaser>a{margin-top:18px;margin-bottom:12px}
+@media(max-width:1000px){
+ .hero,.booking{gap:28px}
+}
+@media(max-width:700px){
+ main>.section{padding-top:34px;padding-bottom:34px}
+ .hero{padding:28px 20px 32px;gap:28px}
+ .hero-kicker{margin-top:18px}
+ .hero h1{margin-bottom:20px}
+ .hero-prices{margin-top:22px}
+ .ticker-wrap{padding:22px 0}
+ main .section-head{margin-bottom:20px}
+ main .section-head p{margin-top:16px}
+ #schedule{gap:16px 12px}
+ .card-info{padding:16px 12px}
+ .card-info p{margin-bottom:12px}
+ .pass{padding:22px}
+ .pass-name{min-height:0}
+ .booking{gap:22px}
+ .latinfun{gap:18px}
+ footer{padding-top:24px;padding-bottom:24px}
+}
